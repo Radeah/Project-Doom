@@ -24,7 +24,7 @@ public class Door : MonoBehaviour
 
     }
 
-    void OnTriggerExist(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == "Reach")
         {
