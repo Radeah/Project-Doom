@@ -1693,9 +1693,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e572daba90c8bf4d8479afa427bcd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 191367024}
   enable: 1
   amplitude: 0.1
-  frequency: 30
+  frequency: 10.7
   camera: {fileID: 963194228}
   cameraHolder: {fileID: 1440216527}
 --- !u!1 &1454665351 stripped

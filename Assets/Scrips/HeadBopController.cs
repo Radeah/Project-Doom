@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeadBopController : MonoBehaviour
 {
+    public CharacterController characterController;
 
     [SerializeField] bool enable = true;
 
@@ -48,7 +49,7 @@ public class HeadBopController : MonoBehaviour
     void ResetPosition()
     {
      if (camera.localPosition == startPos) return;
-     camera.localPosition = Vector3.Lerp(camera.localPosition, startPos, 1 * Time.deltaTime);
+     camera.localPosition = Vector3.Lerp(camera.localPosition, startPos, 0 * Time.deltaTime);
         
     }
 
