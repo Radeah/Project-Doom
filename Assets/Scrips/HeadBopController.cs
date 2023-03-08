@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HeadBopController : MonoBehaviour
 {
-    public CharacterController characterController;
 
     [SerializeField] bool enable = true;
 
