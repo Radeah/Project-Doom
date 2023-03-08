@@ -5,7 +5,7 @@ using UnityEngine;
 public class MouseLook : MonoBehaviour 
 {
 
-    public float mouseSensitivity = 100000000000000000000000000000000000000f;
+    public float mouseSensitivity = 100f;
 
     public Transform playerBody; //This for the x axis moving the player body and the cameras at the same time 
 
