@@ -8,6 +8,7 @@ TagManager:
   - Door
   - Reach
   - Shelf
+  - Ladder
   layers:
   - Default
   - TransparentFX
