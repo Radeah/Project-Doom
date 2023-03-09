@@ -7,6 +7,7 @@ public class pickup : MonoBehaviour
     public GameObject keyObj;
     public GameObject invObj;
     public GameObject pickUpText;
+    public AudioSource keySound;
 
     public bool inReach;
 
@@ -40,6 +41,7 @@ public class pickup : MonoBehaviour
         if (inReach && Input.GetButtonDown("Interact"))
         {
             keyObj.SetActive(false);
+            keySound.Play();
             invObj.SetActive(true);
             pickUpText.SetActive(false);
         }

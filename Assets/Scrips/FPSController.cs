@@ -7,6 +7,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
+    [SerializeField] public AudioSource walking;
 
     CharacterController characterController;
     Vector3 velocity;
@@ -35,6 +36,19 @@ public class FPSController : MonoBehaviour
 
         // Move the player
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        //PlayerFoot steps
+        if (IsMoving())
+        {
+            if (!walking.isPlaying)
+            {
+                walking.Play();
+            }
+        }
+        else
+        {
+            walking.Stop();
+        }
 
         // Apply jump force
         if (Input.GetButtonDown("Jump") && isGrounded)

@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
     public Animator door;
     public GameObject openText;
     public bool inReach;
+    public AudioSource doorSound;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class Door : MonoBehaviour
         Debug.Log("It Openes");
         door.SetBool("Open", true);
         door.SetBool("Closed", false);
+        doorSound.Play();
     }
     
     void DoorClose ()
