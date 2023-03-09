@@ -2,43 +2,41 @@ using UnityEngine;
 
 public class HeadBob : MonoBehaviour
 {
-    public float bobFrequency = 5f;
-    public float bobAmplitude = 0.05f;
-    public HeadBob headBob;
+    [SerializeField] float bobFrequency = 2f;
+    [SerializeField] float bobAmplitude = 0.1f;
+    [SerializeField] Transform cameraTransform;
+    [SerializeField] FPSController fpsController;
 
+    float bobTimer = 0f;
+    float bobStepCounter = 0f;
 
-    public CharacterController controller;
-    float timeOffset = 0f;
-
-    void Start()
+    void Update()
     {
-        void Start()
+        if (fpsController.IsMoving()) // check if the player is moving
         {
-            controller = GetComponentInParent<CharacterController>();
-            headBob.SetTimeOffset(controller.transform.localPosition.magnitude);
+            // Calculate head bob amount based on timer and frequency/amplitude settings
+            float bobAmount = Mathf.Sin(bobTimer) * bobAmplitude;
 
+            // Apply head bob to camera transform
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, bobAmount, cameraTransform.localPosition.z);
+
+            // Increment timer and step counter
+            if (bobStepCounter >= Mathf.PI * 2)
+            {
+                bobStepCounter = 0;
+            }
+            else
+            {
+                bobStepCounter += bobFrequency * Time.deltaTime;
+            }
+
+            bobTimer = bobStepCounter;
         }
-
-    }
-
-    private void Update()
-    {
-        // Calculate the new position for the camera
-        float x = Mathf.Sin((Time.time + timeOffset) * bobFrequency) * bobAmplitude;
-        float y = Mathf.Cos((Time.time + timeOffset) * bobFrequency * 2f) * bobAmplitude * 0.5f;
-        Vector3 newPosition = controller.transform.localPosition + new Vector3(x, y, 0f);
-
-
-        // Move the camera to the new position using a lerp function
-        transform.localPosition = Vector3.Lerp(transform.localPosition, newPosition, Time.deltaTime * 10f);
-    }
-
-    public void SetTimeOffset(float offset)
-    {
-        // Use this method to synchronize the head bob effect across the network
-        timeOffset = offset;
+        else // player is not moving, reset head bob
+        {
+            cameraTransform.localPosition = new Vector3(cameraTransform.localPosition.x, 0f, cameraTransform.localPosition.z);
+            bobTimer = 0f;
+            bobStepCounter = 0f;
+        }
     }
 }
-
-
-
