@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vent: MonoBehaviour
+public class Opening: MonoBehaviour
 {
     public Animator ventObj;
     public GameObject screwObjNeeded;
@@ -34,8 +34,9 @@ public class Vent: MonoBehaviour
     {
         if (other.gameObject.tag == "Reach")
         {
-            inReach = true;
-            OpenText.SetActive(true);
+            inReach = false;
+            OpenText.SetActive(false);
+            screwMissingText.SetActive(false);
         }
     }
 
@@ -51,7 +52,7 @@ public class Vent: MonoBehaviour
             isOpen = true;
         }
         
-        else if (screwObjNeeded.activeInHierarchy == true && inReach && Input.GetButtonDown("Interact"))
+        else if (screwObjNeeded.activeInHierarchy == false && inReach && Input.GetButtonDown("Interact"))
         {
             OpenText.SetActive(false);
             screwMissingText.SetActive(true);
@@ -59,7 +60,7 @@ public class Vent: MonoBehaviour
         if(isOpen)
         {
             ventObj.GetComponent<BoxCollider>().enabled = false;
-            ventObj.GetComponent<Vent>().enabled = false;
+            ventObj.GetComponent<Opening>().enabled = false;
         }
 
     }
