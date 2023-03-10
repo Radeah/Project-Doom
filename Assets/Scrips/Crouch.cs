@@ -17,7 +17,7 @@ public class Crouch : MonoBehaviour
     {
        if (Input.GetKey(KeyCode.LeftShift))
        {
-            characterCollider.height = 0.8f;
+            characterCollider.height = 0.4f;
        }
        else
        {

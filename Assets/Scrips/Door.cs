@@ -49,16 +49,16 @@ public class Door : MonoBehaviour
     void DoorOpens ()
     {
         Debug.Log("It Openes");
-        door.SetBool("Open", true);
-        door.SetBool("Closed", false);
+        door.SetBool("open", true);
+        door.SetBool("closed", false);
         doorSound.Play();
     }
     
     void DoorClose ()
     {
         Debug.Log("It Closes");
-        door.SetBool("Open", false);
-        door.SetBool("Closed", true);
+        door.SetBool("open", false);
+        door.SetBool("closed", true);
     }
     
     
