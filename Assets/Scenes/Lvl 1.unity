@@ -642,7 +642,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533034529}
   m_LocalRotation: {x: -0, y: 0.10239175, z: -0, w: 0.9947442}
-  m_LocalPosition: {x: 145, y: 217, z: 388.4}
+  m_LocalPosition: {x: -73, y: 286.2, z: 420.8}
   m_LocalScale: {x: 2.3153262, y: 2.0000343, z: 1.2398872}
   m_Children:
   - {fileID: 1183114220}
@@ -2001,12 +2001,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011196623}
   m_LocalRotation: {x: -0, y: 0.054688808, z: -0, w: -0.99850345}
-  m_LocalPosition: {x: 132, y: -180, z: -1189}
+  m_LocalPosition: {x: 149.6, y: -213.6, z: -1152.4}
   m_LocalScale: {x: 1.173311, y: 1.9459871, z: 2.2586393}
   m_Children:
   - {fileID: 533034530}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -1086.27, z: 0}
 --- !u!1 &1021711935
 GameObject:
@@ -2200,7 +2200,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 53449824d1e1e8743bca3116b7ddcab2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 53449824d1e1e8743bca3116b7ddcab2, type: 3}
       propertyPath: m_LocalScale.x
@@ -4566,6 +4566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653650759737}
+  - component: {fileID: 919132149112564356}
   m_Layer: 0
   m_Name: Newest level map for fmp
   m_TagString: Untagged
@@ -4573,6 +4574,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &919132149112564356
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149112564355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &919767055413107604
 GameObject:
   m_ObjectHideFlags: 0
